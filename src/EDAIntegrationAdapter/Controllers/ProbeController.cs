@@ -17,9 +17,10 @@ namespace EDAIntegrationAdapter.Controllers
         /// empty get to serve as health probe endpoint
         /// </summary>
         [HttpGet]
-        public void Get()
+        public IActionResult Get()
         {
-            
+            //todo should there be more dependencies in this check.
+            return new OkResult();
         }
     }
 }

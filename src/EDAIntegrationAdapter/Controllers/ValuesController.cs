@@ -5,20 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EDAIntegrationAdapter.Controllers
 {
-    [ApiVersion("1.0")]
-    [Route("api/v{version:apiVersion}/[controller]")]
-    [Produces("application/json")]
-    [Authorize]
-    public class WebhookController : Controller
-    {
-
-        public async Task<IActionResult> Post()
-        {
-
-        }
-    }
-
-
     /// <summary>
     /// sample controller
     /// </summary>
