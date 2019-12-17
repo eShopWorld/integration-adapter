@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EDAIntegrationAdapter
+namespace IntegrationAdapter
 {
     /// <summary>
     /// The configuration settings for this service

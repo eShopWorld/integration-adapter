@@ -3,9 +3,9 @@ using System.Diagnostics.Tracing;
 using System.Fabric;
 using System.Threading.Tasks;
 
-namespace EDAIntegrationAdapter
+namespace IntegrationAdapter
 {
-    [EventSource(Name = "ESW-EDAIntegrationAdapter")]
+    [EventSource(Name = "ESW-IntegrationAdapter")]
     internal sealed class ServiceEventSource : EventSource
     {
         public static readonly ServiceEventSource Current = new ServiceEventSource();

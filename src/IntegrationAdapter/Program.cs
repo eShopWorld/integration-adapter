@@ -3,11 +3,11 @@ using System.Diagnostics;
 using System.Threading;
 using Eshopworld.Telemetry;
 using Eshopworld.Web;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.ServiceFabric.Services.Runtime;
 
-namespace EDAIntegrationAdapter
+namespace IntegrationAdapter
 {
     internal static class Program
     {
@@ -25,10 +25,10 @@ namespace EDAIntegrationAdapter
                     // When Service Fabric creates an instance of this service type,
                     // an instance of the class is created in this host process.
 
-                    ServiceRuntime.RegisterServiceAsync("EDAIntegrationAdapterType",
-                        context => new EDAIntegrationAdapter(context)).GetAwaiter().GetResult();
+                    ServiceRuntime.RegisterServiceAsync("IntegrationAdapterType",
+                        context => new IntegrationAdapter(context)).GetAwaiter().GetResult();
 
-                    ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(EDAIntegrationAdapter).Name);
+                    ServiceEventSource.Current.ServiceTypeRegistered(Process.GetCurrentProcess().Id, typeof(IntegrationAdapter).Name);
 
                     // Prevents this host process from terminating so services keeps running. 
                     Thread.Sleep(Timeout.Infinite);

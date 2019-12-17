@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EDAIntegrationAdapter.Controllers
+namespace IntegrationAdapter.Controllers
 {
     /// <summary>
     /// health probe controller

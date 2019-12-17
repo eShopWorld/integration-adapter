@@ -1,24 +1,24 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Eshopworld.Core;
 using Eshopworld.DevOps;
-using Eshopworld.Web;
 using Eshopworld.Telemetry;
+using Eshopworld.Web;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using System.Reflection;
-using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.OpenApi.Models;
 
-namespace EDAIntegrationAdapter
+namespace IntegrationAdapter
 {
     /// <summary>
     /// Startup class for ASP.NET runtime
@@ -82,7 +82,7 @@ namespace EDAIntegrationAdapter
                     {
                         c.IncludeXmlComments(path);
                         c.DescribeAllEnumsAsStrings();
-                        c.SwaggerDoc("v1", new OpenApiInfo { Version = Assembly.GetExecutingAssembly().GetName().Version.ToString(), Title = "EDAIntegrationAdapter" });
+                        c.SwaggerDoc("v1", new OpenApiInfo { Version = Assembly.GetExecutingAssembly().GetName().Version.ToString(), Title = "IntegrationAdapter" });
                         c.CustomSchemaIds(x => x.FullName);
                         c.AddSecurityDefinition("Bearer",
                             new OpenApiSecurityScheme
@@ -150,7 +150,7 @@ namespace EDAIntegrationAdapter
             }); 
             app.UseSwaggerUI(o =>
             {
-                o.SwaggerEndpoint("v1/swagger.json", "EDAIntegrationAdapter");
+                o.SwaggerEndpoint("v1/swagger.json", "IntegrationAdapter");
                 o.RoutePrefix = "swagger";
             });
 

@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "EDAIntegrationAdapter": {
+    "IntegrationAdapter": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",
