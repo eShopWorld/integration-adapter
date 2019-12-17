@@ -39,9 +39,6 @@
     <Content Include="PublishProfiles\Local.1Node.xml" />
     <Content Include="PublishProfiles\Local.5Node.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EDAIntegrationAdapter\EDAIntegrationAdapter.csproj" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>
     <ApplicationProjectTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Service Fabric Tools\Microsoft.VisualStudio.Azure.Fabric.ApplicationProject.targets</ApplicationProjectTargetsPath>
