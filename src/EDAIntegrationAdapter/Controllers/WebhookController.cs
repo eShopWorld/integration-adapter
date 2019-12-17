@@ -46,15 +46,18 @@ namespace EDAIntegrationAdapter.Controllers
         /// <param name="eventHandler"></param>
         public void Register(IEventHandler eventHandler)
         {
-            if (_handlers.TryAdd(eventHandler.EventName, eventHandler))
+            if (!_handlers.TryAdd(eventHandler.EventName, eventHandler))
             {
-
+                //todo blow up
             }
         }
 
         public void Get(string eventType)
         {
-            _handlers
+            if(!_handlers.TryGetValue(eventType, out var handler))
+            {
+
+            }
         }
     }
 
